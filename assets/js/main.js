@@ -163,6 +163,7 @@ const iconTheme = 'uil-sun'
 
 // Previously selected topic (if user selected)
 const selectedTheme = localStorage.getItem('selected-theme')
+
 const selectedIcon = localStorage.getItem('selected-icon')
 
 // We obtain the current theme that the interface has by validating the dark-theme class
@@ -182,6 +183,27 @@ themeButton.addEventListener('click', () => {
     document.body.classList.toggle(darkTheme)
     themeButton.classList.toggle(iconTheme)
     // We save the theme and the current icon that the user chose
+    cambiarLogoModo()
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+function cambiarLogoModo() {
+    const logoClaro = document.getElementById("logo-claro");
+    const logoOscuro = document.getElementById("logo-oscuro");
+    console.log(getCurrentTheme());
+    if (getCurrentTheme() === 'light') {
+      logoClaro.classList.add("visible");
+      logoClaro.classList.remove("invisible");
+      logoOscuro.classList.add("invisible");  
+      logoOscuro.classList.remove("visible");
+    } else {
+      logoOscuro.classList.add("visible");
+      logoOscuro.classList.remove("invisible");
+      logoClaro.classList.add("invisible")
+      logoClaro.classList.remove("visible");
+    }
+  }
+  cambiarLogoModo()
+
+  
