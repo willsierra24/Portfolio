@@ -191,7 +191,6 @@ themeButton.addEventListener('click', () => {
 function cambiarLogoModo() {
     const logoClaro = document.getElementById("logo-claro");
     const logoOscuro = document.getElementById("logo-oscuro");
-    console.log(getCurrentTheme());
     if (getCurrentTheme() === 'light') {
       logoClaro.classList.add("visible");
       logoClaro.classList.remove("invisible");
@@ -206,4 +205,40 @@ function cambiarLogoModo() {
   }
   cambiarLogoModo()
 
-  
+/*==================== SEND EMAILS ====================*/ 
+
+const $form = document.querySelector('#form')
+$form.addEventListener('submit', handleSubmit)
+
+async function handleSubmit(event) {
+  event.preventDefault()
+  const fd = new FormData(this)
+
+  const response = await fetch('https://formspree.io/f/xpzeybrk', {
+    method: 'POST',
+    body: fd,
+    headers: {
+      Accept: 'application/json'
+    }
+  })
+
+  if (response.ok) {
+    this.reset()
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'message sent',
+        showConfirmButton: false,
+  timer: 1500
+})
+  } else {
+    Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'There has been an error while sending your message',
+        text: 'Please fill all the fields',
+        showConfirmButton: false,
+        timer: 2500
+      })
+  }
+}
