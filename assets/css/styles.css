@@ -845,7 +845,7 @@ display: block;
   color: var(--first-color);
 }
 
-.swiper-container .swiper-pagination-testimonial{
+#swiper-testimonial{
   bottom: 0;
 }
 
