@@ -22,6 +22,8 @@
     --container-color: #fff;
     --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
     --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+    --button-white-color: #fff;
+    --button-first-color: hsl(var(--hue-color), 100%, 51%);
 
     /*========== Font and typography ==========*/
     --body-font: 'Poppins', sans-serif;
@@ -80,6 +82,9 @@ body.dark-theme{
       --container-color: #000;
       --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
       --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+      --button-white-color: hsl(var(--hue-color), 100%, 51%);
+      --button-first-color: #fff
+
 }
 
 /*========== Button Dark/Light ==========*/
@@ -401,14 +406,13 @@ img {
   color: var(--first-color-alt);
 }
 
-/* .button--white{
-  background-color: #fff;
-  color: var(--first-color);
-} */
+.button--white{
+  background-color: var(--button-white-color);
+  color: var(--button-first-color);
+} 
 
 .button--white:hover{
-  background-color: #fff;
-
+  background-color: var(--button-white-color);
 }
 
 /*==================== ABOUT ====================*/
