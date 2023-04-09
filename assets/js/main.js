@@ -100,6 +100,10 @@ let swiperPortfolio = new Swiper(".portfolio__container", {
       el: ".swiper-pagination",
       clickable: true
     },
+    allowSlideNext: true,
+    autoplay: {
+        delay: 6000,
+      }
   });
 
 /*==================== TESTIMONIAL ====================*/
